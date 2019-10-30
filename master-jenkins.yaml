@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  master-jenkins:
+    image: jenkins:jenkins
+    volumes:
+      - master-jenkins-data:/var/jenkins_home
+    ports:
+      - "8080:8080"
+    networks:
+      - jenkins
+    deploy:
+      replicas: 1
+
+networks:
+  jenkins:
+
+volumes:
+  master-jenkins-data:
